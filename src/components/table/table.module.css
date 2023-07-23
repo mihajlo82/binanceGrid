@@ -1,0 +1,18 @@
+.table_page_wrapp {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: radial-gradient(circle, #5798b3, #5ca8c2, #61b8cf, #67c8dd, #6ed9e9);
+    /* background-image: linear-gradient(to right top, #f2f6fd, #eff3f9, #ecf0f4, #eaecf0, #e7e9ec); */
+ }
+
+ .table_wrapp {
+    padding-top: 10px;
+    width: 95%;
+    height: 82%;
+ }

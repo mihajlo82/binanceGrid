@@ -1,5 +1,10 @@
 body {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -10,4 +15,12 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+.ag-theme-alpine {
+  /* disable all borders */
+  --ag-borders: none;
+  /* then add back a border between rows */
+  --ag-row-border-style: dashed;
+  --ag-row-border-width: 5px;
+  --ag-row-border-color: rgb(150, 150, 200);
 }
