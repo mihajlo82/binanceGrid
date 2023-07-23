@@ -4,8 +4,8 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 function App() {
   const client = new QueryClient({
     defaultOptions: {
-      queries: {  
-        refetchOnWindowFocus: true, 
+      queries: {
+        refetchOnWindowFocus: true,
       },
     },
   });
