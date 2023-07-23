@@ -1,10 +1,20 @@
 import Table from "./components/table/Table";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 function App() {
+  const client = new QueryClient({
+    defaultOptions: {
+      queries: {  
+        refetchOnWindowFocus: true, 
+      },
+    },
+  });
   return (
-    <main>
-      <Table />
-    </main>
+    <QueryClientProvider client={client}>
+      <main>
+        <Table />
+      </main>
+    </QueryClientProvider>
   );
 }
 
