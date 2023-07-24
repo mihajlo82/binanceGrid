@@ -1,4 +1,6 @@
-.table_page_wrapp {
+import styled from "styled-components";
+
+export const TableContainer = styled.section`
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -15,10 +17,10 @@
     #3ebca4,
     #28b7a4
   );
-}
+`;
 
-.table_wrapp {
+export const TableWrapp = styled.article`
   padding-top: 10px;
   width: 95%;
   height: 82%;
-}
+`;

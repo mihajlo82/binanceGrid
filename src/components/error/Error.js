@@ -1,19 +1,15 @@
-import { ERROR_TITLE } from "../../constants/text";
 import Title from "../../utils/title/Title";
-import style from "./error.module.css";
+import { ERROR_TITLE } from "../../constants/text";
+import { Button, ErrorContainer } from "./styled";
 
 const Error = () => {
   return (
-    <section className={style.error_page_wrapp}>
+    <ErrorContainer>
       <Title name={ERROR_TITLE} />
-      <button
-        type="button"
-        className={style.button}
-        onClick={() => window.location.reload()}
-      >
+      <Button type="button" onClick={() => window.location.reload()}>
         Refresh page
-      </button>
-    </section>
+      </Button>
+    </ErrorContainer>
   );
 };
 

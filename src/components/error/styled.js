@@ -1,4 +1,6 @@
-.error_page_wrapp {
+import styled from "styled-components";
+
+export const ErrorContainer = styled.section`
   width: 100vw;
   height: 100vh;
   background-image: radial-gradient(
@@ -12,9 +14,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-}
+`;
 
-.button {
+export const Button = styled.button`
   width: 150px;
   height: 45px;
   border-radius: 12px;
@@ -24,4 +26,4 @@
   color: white;
   cursor: pointer;
   font-weight: 600;
-}
+`;
