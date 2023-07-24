@@ -1,24 +1,26 @@
 import { useState } from "react";
 import { AgGridReact } from "ag-grid-react";
 import { useQuery } from "@tanstack/react-query";
-import Title from "./title/Title";
-import useTable from "./useTable";
+import Error from "../error/Error";
+import Title from "../../utils/title/Title";
+import useTable from "./hooks/useTable";
 import style from "./table.module.css";
 import "ag-grid-community/styles/ag-grid.css";
 import "ag-grid-community/styles/ag-theme-alpine.css";
+import { BINANCE_TITLE } from "../../constants/text";
 
 const Table = () => {
   const [rowData, setRowData] = useState();
   const [columnDefs, setColumnDefs] = useState([]);
 
   const { getBinanceData } = useTable({ setColumnDefs, setRowData });
-  const { isError } = useQuery(["binanceData"], getBinanceData);
+  const { isError, isLoadingError } = useQuery(["binanceData"], getBinanceData);
 
-  if (isError) return <h1>Error getting data...</h1>;
+  if (isError || isLoadingError) return <Error />;
 
   return (
     <section className={style.table_page_wrapp}>
-      <Title name="Binanace AG Grid" />
+      <Title name={BINANCE_TITLE} />
       <article className={`ag-theme-alpine-dark ${style.table_wrapp}`}>
         <AgGridReact
           rowData={rowData}

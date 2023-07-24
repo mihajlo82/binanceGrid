@@ -1,11 +1,11 @@
-import axios from "axios";
 import moment from "moment";
-import { FETCH_DATA_URL } from "./constants";
+import { ApiService } from "../../../service/api_service";
+import { THROW_FETCH_ERROR } from "../../../constants/text";
 
 const useTable = ({ setColumnDefs, setRowData }) => {
   const getBinanceData = async () => {
-    return await axios
-      .get(FETCH_DATA_URL)
+    return new ApiService()
+      .fetchBinanceData()
       .then((response) => {
         if (response?.status === 200) {
           const allData = response.data.slice(0, 1000).map((item) => {
@@ -25,11 +25,11 @@ const useTable = ({ setColumnDefs, setRowData }) => {
 
           return response;
         }
-        throw new Error("Error getting data...");
+        throw new Error(THROW_FETCH_ERROR);
       })
       .catch((error) => window.alert(error));
   };
   return { getBinanceData };
 };
 
-export default useTable; 
+export default useTable;
